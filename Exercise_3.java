@@ -31,11 +31,12 @@ public class Exercise_3 {
     public static Exercise_3 insert(Exercise_3 list, int data) {
         // Create a new node with given data
         Node newNode = new Node(data);
-        // If the Linked List is empty,
-        // then make the new node as head
+        // Checking If the Linked List is empty
         if (list.head == null) {
+            // If empty, make the new node as head
             list.head = newNode;
         } else {
+            // Else traverse to the end of list and insert at end - hence O(n)
             Node curr = list.head;
             while (curr.next != null) {
                 curr = curr.next;
@@ -43,28 +44,20 @@ public class Exercise_3 {
             curr.next = newNode;
             newNode.next = null;
         }
-        // Else traverse till the last node
-        // and insert the new_node there
-        // Insert the new_node at last node
-        // Return the list by head
         return list;
-
     }
 
     // Method to print the LinkedList.
     public static void printList(Exercise_3 list) {
         // Traverse through the LinkedList
-
         Node curr = list.head;
         while (curr.next != null) {
+            // Print data of each node
             System.out.print(curr.data + "->");
+            // Go to the next node
             curr = curr.next;
         }
         System.out.print(curr.data);
-
-        // Print the data at current node
-
-        // Go to next node
     }
 
     // Driver code

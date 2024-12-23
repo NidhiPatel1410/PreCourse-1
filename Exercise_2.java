@@ -19,26 +19,27 @@ public class Exercise_2 {
     }
 
     public boolean isEmpty() {
-        // Write your code here for the condition if stack is empty.
+        // If root is null, stack is empty
         return root == null;
     }
 
     public void push(int data) {
-        // Write code to push data to the stack.
         StackNode s = new StackNode(data);
+        // Linking the current node to the previous node
         s.next = root;
+        // Pointing the root to the current node
         root = s;
     }
 
     public int pop() {
-        // If Stack Empty Return 0 and print "Stack Underflow"
-        // Write code to pop the topmost element of stack.
-        // Also return the popped element
         if (isEmpty()) {
+            // Checking if stack is empty then printing stack underflow
             System.out.println("Stack Underflow");
             return 0;
         } else {
+            // If not empty, removing the topmost element following LIFO
             StackNode topElement = root;
+            // Detaching it by changing the root pointer to the second last element
             root = root.next;
             return topElement.data;
         }

@@ -4,8 +4,6 @@
 // Any problem you faced while coding this : No
 
 class Stack {
-    // Please read sample.java file before starting.
-    // Kindly include Time and Space complexity at top of each file
     static final int MAX = 1000;
     int top;
     int a[] = new int[MAX]; // Maximum size of Stack
@@ -22,8 +20,6 @@ class Stack {
     }
 
     boolean push(int x) {
-        // Check for stack Overflow
-        // Write your code here
         // Checking if the array is reached to its max capacity, if so then returning
         // false
         if (top == 1000) {
@@ -38,8 +34,6 @@ class Stack {
     }
 
     int pop() {
-        // If empty return 0 and print " Stack Underflow"
-        // Write your code here
         // Checking if stack is empty, returning 0 else returning the last value pushed
         // keeping LIFO in mind
         if (top == -1) {
@@ -51,8 +45,6 @@ class Stack {
     }
 
     int peek() {
-        // Write your code here
-        // Returning the peek(top/last pushed) value from the array
         // peek is just returning - not deleting - unlike pop
         return a[top];
     }
